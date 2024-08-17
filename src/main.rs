@@ -33,6 +33,13 @@ fn main() {
 }
 
 fn solve(coefs: [f32; 3]) -> (f32, f32) {
+    if (coefs[1] * coefs[1]) - (4.0 * coefs[0] * coefs[2]) < 0.0 {
+        println!("There are no real solutions to this equation. Throwing error.");
+        println!("TODO: add implementation for solution with positive square root * i");
+        panic!("Negative discriminant. Currently work in progress.");
+        
+    }
+
 
     let x1 = {
         (
