@@ -47,7 +47,7 @@ Furthermore, to add the compiled binary as a command, type:
 ```
 cargo install --path .
 ```
-and then run the application anywhere with: 
+and run the application anywhere with: 
 ```
 rust-quad
 ```
