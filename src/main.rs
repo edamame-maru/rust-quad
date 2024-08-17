@@ -26,8 +26,8 @@ fn main() {
             .parse()
             .expect("Enter only a single floating-point or integer number, prefferably without leading/trailing whitespace.");
 
-        if coefs[i] == 0.0 {
-            println!("What made you think that was smart?");
+        if coefs[0] == 0.0 {
+            println!("AHEM. What made you think that was smart?");
             panic!("User set a = 0");
         }
     }
