@@ -13,7 +13,7 @@ Simple quadratic equation implementation in rust.
 ```
 ## Installation
 ### Installing the Rust toolchain
-If you already have rust installed on your system, you can skip this step. To check if Rust is installed, on type: 
+If you already have rust installed on your system, you can skip to ```Getting the source code``` step. To check if Rust is installed, on type: 
 ```
 rustup --version
 ```
