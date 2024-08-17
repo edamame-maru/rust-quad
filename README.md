@@ -13,7 +13,7 @@ Simple quadratic equation implementation in rust.
 ```
 ## Installation
 ### Installing the Rust toolchain
-If you already have rust installed on your system, you can skip to ```Getting the source code```. To check if Rust is installed, on type: 
+If you already have rust installed on your system, you can skip to ```Getting the source code```. To check if Rust is installed on your system, type: 
 ```
 rustup --version
 ```
@@ -23,7 +23,7 @@ rustc x.y.z (abcabcabc yyyy-mm-dd)
 ```
 to indicate the version of Rust installed.
 #### macOS, Linux
-If you're running macOS, Linux, or another Unix-like OS, run the following command to download Rustup and install Rust. Follow the on-screen instructions, and, when prompted, just click the enter key.
+If you're running macOS, Linux, or another Unix-like OS, run the following command to download Rustup and install Rust. Follow the on-screen instructions, and, when prompted, press enter to accept the default configuration.
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -35,7 +35,7 @@ You may need to restart your terminal session to refresh your PATH and other env
 If you're running Windows, download and run the installer, [rustup-init.exe](https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe) and then follow the on-screen instructions. You may need to restart your terminal session to refresh your PATH and other environment variables.
 
 #### Standalone installers and Source code
-If you want to build the Rust toolchain from source code, want an offline installation, prefer a more platform-integrated, graphicall installer on Windows, or want to install Rust on a different system, visit [this official website](https://forge.rust-lang.org/infra/other-installation-methods.html), or [the official landing page](https://www.rust-lang.org/tools/install).
+If you want to build the Rust toolchain from source code, want an offline installation, prefer a more platform-integrated, graphical installer on Windows, or want to install Rust on a different system, visit [this official website](https://forge.rust-lang.org/infra/other-installation-methods.html), or [the official landing page](https://www.rust-lang.org/tools/install).
 
 ### Getting the source code
 Clone this repository or download the [zip file](https://github.com/edamame-maru/rust-quad/archive/refs/heads/main.zip). If you downloaded the zip file, make sure you extract the archive. Then, in the project folder, ```rust-quad```, run:
