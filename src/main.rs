@@ -25,6 +25,11 @@ fn main() {
             .trim()
             .parse()
             .expect("Enter only a single floating-point or integer number, prefferably without leading/trailing whitespace.");
+
+        if coefs[i] == 0.0 {
+            println!("What made you think that was smart?");
+            panic!("User set a = 0");
+        }
     }
 
     println!("\nInputted [a, b, c] = {:?}\n", coefs);
