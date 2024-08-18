@@ -40,7 +40,6 @@ fn main() {
         solve_complex(coefs);
     }
 
-
     io::stdout().flush().unwrap();
 }
 
