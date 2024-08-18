@@ -3,7 +3,7 @@ use std::io::{self, Write};
 fn main() {
     let mut coefs: [f32; 3] = [0.0; 3];
 
-    println!("Enter a, b, c where the quadratic is in the form ax^2 + bx + c = 0");
+    println!("ax^2 + bx + c = 0");
 
     for i in 0..coefs.len() {
         let label = match i {
@@ -32,11 +32,10 @@ fn main() {
         }
     }
 
-    println!("\nInputted [a, b, c] = {:?}\n", coefs);
+    println!("\nInputted {:?} -> [a, b, c]\n", coefs);
     print!("The solutions to the equation {}x^2 + {}x + {} = 0 are ", coefs[0], coefs[1], coefs[2]);
     if (coefs[1] * coefs[1]) - (4.0 * coefs[0] * coefs[2]) >= 0.0 {
-        print!("{:?}\n", solve_real(coefs));
-        io::stdout().flush().unwrap();
+        solve_real(coefs);
     } else {
         solve_complex(coefs);
     }
@@ -45,7 +44,7 @@ fn main() {
     io::stdout().flush().unwrap();
 }
 
-fn solve_real(coefs: [f32; 3]) -> (f32, f32) {
+fn solve_real(coefs: [f32; 3]) {
     let x1 = {
         (
             (-1.0 * coefs[1]) + (
@@ -61,8 +60,8 @@ fn solve_real(coefs: [f32; 3]) -> (f32, f32) {
             ).sqrt()
         ) / (2.0 * coefs[0])
     };
-
-    (x1, x2)
+    println!("{} and {}", x1, x2);
+    io::stdout().flush().unwrap();
 }
 fn solve_complex(coefs: [f32; 3]) {
     print!(
