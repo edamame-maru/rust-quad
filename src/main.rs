@@ -3,7 +3,7 @@ use std::io::{self, Write};
 fn main() {
     let mut coefs: [f32; 3] = [0.0; 3];
 
-    println!("Enter a, b, c where the quadratic is in the form ax^2 + bx + c = 0:\n");
+    println!("Enter a, b, c where the quadratic is in the form ax^2 + bx + c = 0");
 
     for i in 0..coefs.len() {
         let label = match i {
@@ -33,17 +33,19 @@ fn main() {
     }
 
     println!("\nInputted [a, b, c] = {:?}\n", coefs);
-    println!("The solutions to the equation {}x^2 + {}x + {} = 0 are {:?}", coefs[0], coefs[1], coefs[2], solve(coefs));
-    io::stdout().flush().unwrap();
-}
-
-fn solve(coefs: [f32; 3]) -> (f32, f32) {
-    if (coefs[1] * coefs[1]) - (4.0 * coefs[0] * coefs[2]) < 0.0 {
-        println!("There are no real solutions to this equation.");
-        panic!("There are no real solutions to this equation.");   
+    print!("The solutions to the equation {}x^2 + {}x + {} = 0 are ", coefs[0], coefs[1], coefs[2]);
+    if (coefs[1] * coefs[1]) - (4.0 * coefs[0] * coefs[2]) >= 0.0 {
+        print!("{:?}\n", solve_real(coefs));
+        io::stdout().flush().unwrap();
+    } else {
+        solve_complex(coefs);
     }
 
 
+    io::stdout().flush().unwrap();
+}
+
+fn solve_real(coefs: [f32; 3]) -> (f32, f32) {
     let x1 = {
         (
             (-1.0 * coefs[1]) + (
@@ -61,4 +63,33 @@ fn solve(coefs: [f32; 3]) -> (f32, f32) {
     };
 
     (x1, x2)
+}
+fn solve_complex(coefs: [f32; 3]) {
+    print!(
+        "({} {} {}{}) / {}",
+        -1.0 * coefs[1],
+        '+',
+        (
+            coefs[1] * coefs[1] - 4.0 * coefs[0] * coefs[2] 
+        ).abs().sqrt(),
+        "i",
+        2.0 * coefs[0]
+    );
+
+    print!(" and ");
+
+    print!(
+        "({} {} {}{}) / {}",
+        -1.0 * coefs[1],
+        '-',
+        (
+            coefs[1] * coefs[1] - 4.0 * coefs[0] * coefs[2] 
+        ).abs().sqrt(),
+        "i",
+        2.0 * coefs[0]
+    );
+    
+    print!("\n");
+    io::stdout().flush().unwrap();
+    
 }
