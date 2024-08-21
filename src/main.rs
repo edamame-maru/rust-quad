@@ -1,5 +1,5 @@
 use std::io::{self, Write};
-
+// added random comment
 fn main() {
     let mut coefs: [f32; 3] = [0.0; 3];
 
@@ -89,5 +89,4 @@ fn solve_complex(coefs: [f32; 3]) {
     
     print!("\n");
     io::stdout().flush().unwrap();
-    
 }
